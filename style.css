@@ -1,0 +1,309 @@
+/* Importamos una tipografía moderna y limpia */
+@import url('https://googleapis.com');
+
+:root {
+  --fondo-principal: #f7f5f0;    /* Crema cálido */
+  --verde-bosque: #1b4332;       /* Verde oscuro elegante */
+  --verde-medio: #2d6a4f;        /* Verde acento */
+  --terracota: #c85a32;          /* Naranja quemado para alertas/borrar */
+  --dorado-suave: #d4a373;       /* Dorado para editar */
+  --blanco-puro: #ffffff;
+  --texto-oscuro: #1f2937;
+  --borde-suave: #e2ddd5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: var(--fondo-principal);
+  color: var(--texto-oscuro);
+}
+
+/* --- PANTALLA DE LOGIN (index.html) --- */
+.fondo-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1b4332 0%, #40916c 100%);
+  padding: 20px;
+}
+
+.login-contenedor {
+  background: var(--blanco-puro);
+  padding: 40px 35px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border-top: 6px solid var(--dorado-suave);
+}
+
+.login-contenedor h1 {
+  margin-bottom: 6px;
+  color: var(--verde-bosque);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.login-contenedor p {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login-contenedor input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 14px;
+  border: 1.5px solid var(--borde-suave);
+  border-radius: 10px;
+  background-color: #faf9f6;
+  transition: border-color 0.2s;
+}
+
+.login-contenedor input:focus {
+  outline: none;
+  border-color: var(--verde-medio);
+}
+
+.login-contenedor button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--verde-bosque);
+  color: var(--blanco-puro);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.login-contenedor button:hover {
+  background-color: var(--verde-medio);
+  transform: translateY(-1px);
+}
+
+#mensaje-error {
+  color: var(--terracota);
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* --- PANEL PRINCIPAL (panel.html) --- */
+.menu-principal {
+  background-color: var(--verde-bosque);
+  color: var(--blanco-puro);
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.menu-principal h1 {
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.menu-principal button {
+  background-color: var(--terracota);
+  color: var(--blanco-puro);
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+/* Barra lateral de carpetas */
+.barra-lateral {
+  width: 260px;
+  background-color: var(--blanco-puro);
+  padding: 25px 20px;
+  border-right: 1px solid var(--borde-suave);
+}
+
+.barra-lateral h3 {
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--verde-medio);
+}
+
+.barra-lateral ul {
+  list-style: none;
+}
+
+.barra-lateral li {
+  margin-bottom: 10px;
+}
+
+.barra-lateral button {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  background: var(--fondo-principal);
+  color: var(--texto-oscuro);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.barra-lateral button:hover {
+  background: #e9f5ee;
+  border-color: var(--verde-medio);
+  color: var(--verde-bosque);
+  padding-left: 20px;
+}
+
+/* Área de contenido */
+.contenido {
+  flex: 1;
+  padding: 25px 30px;
+}
+
+.caja-subida, .caja-buscador {
+  background: var(--blanco-puro);
+  padding: 22px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  border: 1px solid var(--borde-suave);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.caja-subida h3 {
+  color: var(--verde-bosque);
+  margin-bottom: 12px;
+}
+
+.caja-subida form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.caja-subida input, .caja-subida select, .caja-buscador input {
+  padding: 11px 14px;
+  border: 1.5px solid var(--borde-suave);
+  border-radius: 9px;
+  flex: 1;
+  min-width: 180px;
+  background-color: #faf9f6;
+}
+
+.caja-subida button {
+  background-color: var(--verde-medio);
+  color: var(--blanco-puro);
+  border: none;
+  padding: 11px 24px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.caja-subida button:hover {
+  background-color: var(--verde-bosque);
+}
+
+/* Tarjetas de documentos */
+#lista-documentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 18px;
+}
+
+.tarjeta {
+  background: var(--blanco-puro);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--borde-suave);
+  border-top: 5px solid var(--verde-medio);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+}
+
+.tarjeta h4 {
+  margin-bottom: 8px;
+  color: var(--verde-bosque);
+  font-size: 16px;
+}
+
+.tarjeta h4 span {
+  display: inline-block;
+  background: #e9f5ee;
+  color: var(--verde-medio);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.tarjeta p {
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #555;
+}
+
+.tarjeta a, .tarjeta button {
+  display: inline-block;
+  padding: 7px 12px;
+  margin-right: 6px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.tarjeta a {
+  background-color: var(--verde-bosque);
+  color: var(--blanco-puro);
+}
+
+.tarjeta button:nth-of-type(1) {
+  background-color: var(--dorado-suave);
+  color: #1f2937;
+}
+
+.tarjeta button:nth-of-type(2) {
+  background-color: var(--terracota);
+  color: var(--blanco-puro);
+}
+
+/* --- DISEÑO RESPONSIVO (Celulares y tablets) --- */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .barra-lateral {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--borde-suave);
+  }
+}
