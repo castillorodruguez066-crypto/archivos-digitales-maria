@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivos Digitales - Panel</title>
+  <link rel="stylesheet" href="CSS/style.css">
+
+
+</head>
+<body>
+
+  <!-- Menú Principal -->
+  <header class="menu-principal">
+    <h1>Archivos Digitales</h1>
+    <span>Alumna: <strong>María Guadalupe Castillo Rodríguez</strong></span>
+    <button id="btn-cerrar-sesion">Cerrar Sesión</button>
+  </header>
+
+  <div class="layout">
+    <!-- Barra Lateral con las 4 carpetas obligatorias -->
+    <aside class="barra-lateral">
+      <h3>Carpetas</h3>
+      <ul>
+        <li><button onclick="filtrarCarpeta('Todas')">Todos los archivos</button></li>
+        <li><button onclick="filtrarCarpeta('Documentos Privados')">Documentos Privados</button></li>
+        <li><button onclick="filtrarCarpeta('Cursos de Actualización')">Cursos de Actualización</button></li>
+        <li><button onclick="filtrarCarpeta('Documentos Académicos')">Documentos Académicos</button></li>
+        <li><button onclick="filtrarCarpeta('Documentos Familiares')">Documentos Familiares</button></li>
+      </ul>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="contenido">
+      <!-- Apartado para subir documentos -->
+      <section class="caja-subida">
+        <h3>Subir Nuevo Documento</h3>
+        <form id="form-documento">
+          <input type="text" id="nombre-archivo" placeholder="Nombre del documento" required>
+
+          <select id="tipo-documento" required>
+            <option value="">Selecciona el tipo de documento</option>
+            <option value="INE">INE</option>
+            <option value="CURP">CURP</option>
+            <option value="ACTA DE NACIMIENTO">ACTA DE NACIMIENTO</option>
+            <option value="CURSOS">CURSOS</option>
+            <option value="CV">CV</option>
+            <option value="TÍTULOS">TÍTULOS</option>
+            <option value="CÉDULAS PROFESIONALES">CÉDULAS PROFESIONALES</option>
+            <option value="RECIBOS DE LUZ Y TELÉFONO">RECIBOS DE LUZ Y TELÉFONO</option>
+          </select>
+
+          <select id="carpeta-documento" required>
+            <option value="Documentos Privados">Documentos Privados</option>
+            <option value="Cursos de Actualización">Cursos de Actualización</option>
+            <option value="Documentos Académicos">Documentos Académicos</option>
+            <option value="Documentos Familiares">Documentos Familiares</option>
+          </select>
+
+          <input type="file" id="archivo-input" required>
+          <button type="submit">Guardar</button>
+        </form>
+      </section>
+
+      <!-- Buscador de archivos -->
+      <section class="caja-buscador">
+        <input type="text" id="input-buscador" placeholder="Buscar archivo por nombre o tipo...">
+      </section>
+
+      <!-- Visualización de documentos con botones Editar y Eliminar -->
+      <section id="lista-documentos"></section>
+    </main>
+  </div>
+
+  <script src="JS/supabase.js"></script>
+<script src="JS/app.js"></script>
+
+</body>
+</html>

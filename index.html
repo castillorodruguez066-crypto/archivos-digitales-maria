@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivos Digitales - Iniciar Sesión</title>
+  <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+<body class="fondo-login">
+
+  <main class="login-contenedor">
+    <h1>Archivos Digitales</h1>
+    <p>María Guadalupe Castillo Rodríguez</p>
+
+    <form id="form-login">
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña (mín. 6 caracteres)" required>
+      <button type="submit">Iniciar Sesión</button>
+      <button type="button" id="btn-registro" style="margin-top: 8px; background-color: #16a34a;">Registrarme</button>
+    </form>
+
+    <p id="mensaje-error"></p>
+  </main>
+
+<script src="JS/supabase.js"></script>
+<script src="JS/app.js"></script>
+
+</body>
+</html>
